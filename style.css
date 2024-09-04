@@ -47,7 +47,7 @@ pre {font-family:"Courier New", Courier, monospace; letter-spacing: -0.5pt;}
 
 
 /* reusable classes */
-.inner { max-width: 1200px; margin: 0 auto; padding-left: 30px; padding-right: 30px; width: 100%; }
+.inner { max-width: 1200px; margin: 0 auto; padding: 30px; width: 100%;  }
 .inner.inner--narrow, .inner.narrow, .text-col {max-width: 880px;}
 .text-col {margin: 0 auto;}
 .hidden, .none, .hide { display: none; }
