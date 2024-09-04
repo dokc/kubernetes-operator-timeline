@@ -1,0 +1,166 @@
+/*
+Theme Name: Constantia - DOK
+Theme URI: https://dok.community/
+Author:DoK Community?
+Author URI: https://dok.community
+Description: This theme is like no other. Unless you're talking about a parallel universe. Then all bets are off. 
+Version: 1.0
+*/
+
+@charset "utf-8";
+
+/* Root Variables */
+:root {
+	--color-text-primary:  #ffffff;
+	--color-text-secondary:  #0AE9C1;
+	--color-text-accent:  #E40AE9;
+	--color-link: #E40AE9;
+	--color-link-hover: rgb(147, 17, 67);
+	--color-secondary-nav: #E40AE9;
+	--color-bg-body: 		#150821;
+	--color-bg-primary-accent: 	#0AE9C1;
+	--color-bg-secondary-accent: 	#7021DF;
+	--color-grad-primary: 	linear-gradient(rgba(228, 10, 233, 0.70) 0%, rgba(144, 47, 221, 0.70) 100%);
+	--color-grad-secondary: 	linear-gradient(rgba(40, 191, 199, 0.80) 56.77%, rgba(104, 102, 213, 0.80) 100%);
+	--color-dark-grey: 	#232323;
+	--val-baseline:	20px;
+}
+
+/* CSS reset.  Why?  Because browser makers make the www difficult to style. Enough with that.  */
+/* Modern CSS reset by: https://piccalil.li/blog/a-modern-css-reset/ */
+*,*::before,*::after{box-sizing:border-box}body,h1,h2,h3,h4,p,figure,blockquote,dl,dd{margin:0}ul[role='list'],ol[role='list']{list-style:none}html:focus-within{scroll-behavior:smooth}body{min-height:100vh;text-rendering:optimizeSpeed;line-height:1.5}a:not([class]){text-decoration-skip-ink:auto}img,picture{max-width:100%;display:block}input,button,textarea,select{font:inherit}@media (prefers-reduced-motion: reduce){html:focus-within{scroll-behavior:auto}*,*::before,*::after{animation-duration:0.01ms !important;animation-iteration-count:1 !important;transition-duration:0.01ms !important;scroll-behavior:auto !important}}
+/* End the Reset.  Let the games begin. */
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+ 
+body { line-height:1;-webkit-text-size-adjust:none; -webkit-font-smoothing: antialiased; /* Chrome, Safari */ -moz-osx-font-smoothing: grayscale; /* Firefox */ font-family: 'Inter', sans-serif;background-color: var(--color-bg-body); color: var(--color-text-primary); font-size: 18px; line-height: 1.5rem;}
+img {max-width: 100%; height: auto; display: inline-block; vertical-align: middle;}
+a { outline:none; text-decoration:none; transition:all 0.2s ease-out; color: var(--color-link) }
+a:hover {color: var(--color-secondary-nav)}
+p a, li a {color: var(--color-link);}
+p a:hover, li a:hover { {color: var(--color-secondary-nav)}}
+.grad-primary a:not(.cta), .grad-primary p a, .grad-primary li a {color: #fff; text-decoration: underline;}
+small { font-size: .8rem;}
+pre {font-family:"Courier New", Courier, monospace; letter-spacing: -0.5pt;}
+
+
+/* reusable classes */
+.inner { max-width: 1200px; margin: 0 auto; padding-left: 30px; padding-right: 30px; width: 100%; }
+.inner.inner--narrow, .inner.narrow, .text-col {max-width: 880px;}
+.text-col {margin: 0 auto;}
+.hidden, .none, .hide { display: none; }
+.invisible {visibility: hidden; }
+
+/* micro clearfix below. contains floats like .clearfix. */
+.cf:before, .cf:after { content: " "; display: table; }
+.cf:after { clear: both; }
+
+/* need to clear floats instead of contain them? use this below. */
+.clear, .clear-both { clear: both; }
+
+/* need to float things? we got you covered. */
+.left, .floatleft { float: left !important; }
+.right, .floatright { float: right !important; }
+
+/* these are for images, below. gives a nice margin. sweet. */
+.alignright { float: right; margin: 0 0 15px 15px;}
+.alignleft { float: left; margin: 0 15px 15px 0;}
+.aligncenter {display: block; margin: 0 auto;}
+.floatnone { float: none; }
+
+/* need a middle-aligned header. don't write another CSS rule. just use these! */
+.text-left {text-align: left;}
+.text-right {text-align: right;}
+.text-center {text-align: center;}
+
+/* positioning */
+.absolute {position: absolute;}
+.relative {position: relative;}
+.fixed {position: fixed;}
+
+/* flex */
+.flex {display: flex;}
+.flex-vert-center {align-items: center;}
+.flex-horz-center {justify-content: center;}
+.flex-center {align-items: center;justify-content: center}
+.flex-space-between {justify-content: space-between;}
+.flex-wrap {flex-wrap:wrap}
+.flex-reverse {flex-direction: row-reverse;}
+.flex-column {flex-direction: column;}
+.flex-row {flex-direction: row;}
+.flex-end {justify-content: end;}
+.two-col-gap {gap: 80px;}
+
+
+/* grid */
+.grid {display: grid;}
+.grid-center {place-items: center;}
+
+/* need to add z-index?  Us these class? */
+.z0 {z-index: 0;}
+.z1 {z-index: 1;}
+.z2 {z-index: 2;}
+.z3 {z-index: 3;}
+.z4 {z-index: 4;}
+/* For a little extra reassurance */
+.z99{z-index: 99;}
+
+/* magic. many combinations exists with simplicity. */
+.float20 { float: left; width: 20%;}
+.float25 { float: left; width: 25%;}
+.float33 { float: left; width: 33.3333%;}
+.float50 { float: left; width: 50%;}
+.float66 { float: left; width: 66.6667%;}
+.float75 { float: left; width: 75%;}
+.float80 { float: left; width: 80%;}
+
+.inline {display:inline-block}
+.inline25 { display: inline-block; width: 25%; margin-right: -4px; } 
+.inline33 { display: inline-block; width: 33.3333%; margin-right: -4px; } 
+.inline50 { display: inline-block; width: 50%; margin-right: -4px; } 
+.inline66 { display: inline-block; width: 66.6666%; margin-right: -4px; } 
+
+.two-col {column-count: 2; column-gap: 20px;}
+
+@media only screen and (max-width:1200px){
+	
+	
+}
+@media only screen and (max-width:1000px){
+	
+}
+@media only screen and (max-width:800px){
+	:root {
+        --val-baseline: 10px;
+    }
+	h1, .home .hero h1 {font-size: 50px;}
+  .half-800 { width: 50%; }
+  .full-800 { float: none; width: 100%; display: block; }
+  .no-flex-800 { display: inherit;}
+	.pad-right-0-800 {padding-right: 0;}
+	.pa-0-800 {padding:0 !important}
+	.hidden-800 {display: none;}
+	
+	 
+}
+@media (max-width: 600px){
+ 
+    .half-600 { width: 50%; }
+    .full-600 { float: none; width: 100%; display: block; }
+    .no-flex-600 { display: inherit;}
+}
+@media (max-width: 500px){
+	h1, .home .hero h1 {font-size: 40px;}
+	h2 {font-size: 32px; line-height: 1.2em;}
+    .half-500 { width: 50%; }
+    .full-500 { float: none; width: 100%; display: block; }
+    .no-flex-500 { display: inherit;}
+}
+@media only screen and (max-width:400px){
+	.tile {width: 100%; padding: 5px; }
+    .half-400 { width: 50%; }
+    .full-400 { float: none; width: 100%; display: block; }
+    .no-flex-400 { display: inherit;}
+}
